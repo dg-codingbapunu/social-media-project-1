@@ -7,3 +7,9 @@
 .sidebar {
   min-height: 700px;
 }
+.post-card {
+  margin: 20px 50px;
+}
+.tags {
+  margin-left: 6px;
+}
