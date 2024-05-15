@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "./components/Footer";
 import Sidebar from "./components/Sidebar";
+import CreatePost from "./components/CreatePost";
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <Sidebar></Sidebar>
       <div className="content">
         <Header></Header>
+        <CreatePost></CreatePost>
         <Footer></Footer>
       </div>
     </div>
