@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "./components/Footer";
 import Sidebar from "./components/Sidebar";
 import CreatePost from "./components/CreatePost";
+import PostList from "./components/PostList";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <div className="content">
         <Header></Header>
         <CreatePost></CreatePost>
+        <PostList></PostList>
         <Footer></Footer>
       </div>
     </div>
