@@ -28,3 +28,67 @@
   margin-top: 44px;
   margin-left: 10%;
 }
+/* Set the viewport for optimal scaling across devices */
+meta[name="viewport"] {
+  content: width=device-width, initial-scale=1.0;
+}
+
+/* Base styles for responsiveness */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically by default */
+}
+
+/* Media queries for responsive adjustments */
+@media (min-width: 768px) {
+  /* Desktop and larger screens */
+  .app-container {
+    flex-direction: row; /* Switch to horizontal layout for wider screens */
+  }
+
+  .content {
+    flex: 1; /* Allow content to fill remaining space */
+  }
+
+  .sidebar {
+    width: 180px; /* Maintain sidebar width */
+  }
+
+  .post-card {
+    margin: 20px; /* Adjust margins for larger layout */
+    max-width: 80%; /* Allow posts to adapt to wider space */
+  }
+
+  .create-post {
+    width: 60%; /* Adjust create post width for better proportions */
+    margin: 0 auto; /* Center create post horizontally */
+  }
+}
+
+@media (max-width: 767px) {
+  /* Tablets and smaller screens */
+  .sidebar {
+    display: none; /* Hide sidebar on smaller screens for cleaner layout */
+  }
+
+  .tags,
+  .likes {
+    margin: 5px; /* Reduce margins for tighter spacing */
+  }
+
+  .post-card {
+    margin: 10px; /* Adjust margins for smaller screen layout */
+    max-width: 100%; /* Ensure posts fill the entire width */
+  }
+
+  .create-post {
+    width: 100%; /* Make create post fill the width on smaller screens */
+    margin: 15px auto; /* Adjust create post margins for compact layout */
+  }
+}
