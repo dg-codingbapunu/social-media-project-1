@@ -11,6 +11,8 @@ const postListReducer = (currPostList, action) => {
     newPostList = currPostList.filter(
       (post) => post.id !== action.payload.postId
     );
+  } else if (action.type === "ADD_POST") {
+    newPostList = [action.payload, ...currPostList];
   }
 
   return newPostList;
@@ -20,7 +22,19 @@ const PostListProvider = ({ children }) => {
     postListReducer,
     DEFAULT_POST_LIST
   );
-  const addPost = () => {};
+  const addPost = (userId, postTitle, postBody, reactions, tags) => {
+    dispatchPostList({
+      type: "ADD_POST",
+      payload: {
+        id: Date.now(),
+        title: postTitle,
+        body: postBody,
+        userId: userId,
+        reactions: reactions,
+        tags: tags,
+      },
+    });
+  };
   const deletePost = (postId) => {
     dispatchPostList({
       type: "DELETE_POST",
@@ -43,14 +57,6 @@ const PostListProvider = ({ children }) => {
   );
 };
 const DEFAULT_POST_LIST = [
-  {
-    id: "1",
-    title: "pass ho bhai",
-    body: "2 sal ke masti ke baad  bhi Mca pass ho gaye hard to Belive",
-    userId: "user_90",
-    reactions: 90,
-    tags: ["pass", "MCA", "2 years"],
-  },
   {
     id: "2",
     title: "Going to chennai",

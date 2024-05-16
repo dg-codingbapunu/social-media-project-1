@@ -6,6 +6,7 @@
 }
 .sidebar {
   min-height: 700px;
+  width: 180px;
 }
 
 .tags {
@@ -21,4 +22,9 @@
 }
 .hower {
   cursor: pointer;
+}
+.create-post {
+  width: 80%;
+  margin-top: 44px;
+  margin-left: 10%;
 }
