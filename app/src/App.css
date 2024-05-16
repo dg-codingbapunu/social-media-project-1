@@ -74,7 +74,9 @@ body {
 @media (max-width: 767px) {
   /* Tablets and smaller screens */
   .sidebar {
-    display: none; /* Hide sidebar on smaller screens for cleaner layout */
+    display: none;
+    min-height: 100px;
+    /* Hide sidebar on smaller screens for cleaner layout */
   }
 
   .tags,
