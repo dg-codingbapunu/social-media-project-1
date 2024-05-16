@@ -6,7 +6,14 @@ export const PostList = createContext({
   deletePost: () => {},
 });
 const postListReducer = (currPostList, action) => {
-  return currPostList;
+  let newPostList = currPostList;
+  if (action.type === "DELETE_POST") {
+    newPostList = currPostList.filter(
+      (post) => post.id !== action.payload.postId
+    );
+  }
+
+  return newPostList;
 };
 const PostListProvider = ({ children }) => {
   const [postList, dispatchPostList] = useReducer(
@@ -14,7 +21,14 @@ const PostListProvider = ({ children }) => {
     DEFAULT_POST_LIST
   );
   const addPost = () => {};
-  const deletePost = () => {};
+  const deletePost = (postId) => {
+    dispatchPostList({
+      type: "DELETE_POST",
+      payload: {
+        postId,
+      },
+    });
+  };
 
   return (
     <PostList.Provider
@@ -35,7 +49,7 @@ const DEFAULT_POST_LIST = [
     body: "2 sal ke masti ke baad  bhi Mca pass ho gaye hard to Belive",
     userId: "user_90",
     reactions: 90,
-    tags: ["pass", "MCA", "2 saal"],
+    tags: ["pass", "MCA", "2 years"],
   },
   {
     id: "2",

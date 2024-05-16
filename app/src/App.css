@@ -7,9 +7,18 @@
 .sidebar {
   min-height: 700px;
 }
+
+.tags {
+  margin-left: 8px;
+}
+.likes {
+  margin-top: 6px;
+  margin-left: 20px;
+}
 .post-card {
   margin: 20px 50px;
+  max-width: 40rem;
 }
-.tags {
-  margin-left: 6px;
+.hower {
+  cursor: pointer;
 }

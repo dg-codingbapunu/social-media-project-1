@@ -1,20 +1,35 @@
+import { useContext } from "react";
 import { MdDelete } from "react-icons/md";
+import { PostList } from "../store/post-list-store";
 
 const Post = ({ post }) => {
+  const { deletePost } = useContext(PostList);
+
   return (
     <>
-      <div className="card post-card" style={{ width: "18rem" }}>
+      <div className="card post-card">
         <div className="card-body">
           <h5 className="card-title">
             {post.title}
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            <span
+              className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger hower"
+              onClick={() => deletePost(post.id)}
+            >
               <MdDelete />
             </span>
           </h5>
           <p className="card-text">{post.body}</p>
           {post.tags.map((tags) => (
-            <span class="badge text-bg-primary tags">{`#${tags}`}</span>
+            <span
+              key={tags}
+              className="badge text-bg-primary tags"
+            >{`#${tags}`}</span>
           ))}
+
+          <button type="button" className="btn btn-primary likes">
+            👍🏻
+            <span className="badge text-bg-secondary">{post.reactions}</span>
+          </button>
         </div>
       </div>
     </>
