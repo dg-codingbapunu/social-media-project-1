@@ -34,6 +34,9 @@
 .button {
   margin-top: 20px !important;
 }
+.loader {
+  margin-top: 100px;
+}
 /* Set the viewport for optimal scaling across devices */
 meta[name="viewport"] {
   content: width=device-width, initial-scale=1.0;
