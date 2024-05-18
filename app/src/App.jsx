@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import "./App.css";
+import { Outlet } from "react-router-dom";
 import Header from "./components/Header";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "./components/Footer";
 import Sidebar from "./components/Sidebar";
-import CreatePost from "./components/CreatePost";
-import PostList from "./components/PostList";
 import PostListProvider from "./store/post-list-store";
 
 const App = () => {
@@ -20,12 +19,8 @@ const App = () => {
         ></Sidebar>
         <div className="content">
           <Header></Header>
-          {selectedTab === "Home" ? (
-            <PostList></PostList>
-          ) : (
-            <CreatePost></CreatePost>
-          )}
 
+          <Outlet></Outlet>
           <Footer></Footer>
         </div>
       </div>

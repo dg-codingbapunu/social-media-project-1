@@ -1,8 +1,10 @@
 import React, { useContext, useRef } from "react";
 import { PostList } from "../store/post-list-store";
+import { useNavigate } from "react-router-dom";
 
 const CreatePost = () => {
   const { addPost } = useContext(PostList);
+  const navigate = useNavigate();
   const userIdElement = useRef();
   const postTitleElement = useRef();
   const postBodyElement = useRef();
@@ -35,6 +37,8 @@ const CreatePost = () => {
     })
       .then((res) => res.json())
       .then((post) => addPost(post));
+
+    navigate("/");
   };
 
   return (
@@ -42,14 +46,14 @@ const CreatePost = () => {
       <form className="create-post" onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="userId" className="form-label">
-            Enter your user Id here (1 to 100)
+            Enter your user Id here
           </label>
           <input
             type="text"
             ref={userIdElement}
             className="form-control"
             id="userId"
-            placeholder="Your user Id"
+            placeholder="userId must be in 1-100 "
           />
         </div>
 
