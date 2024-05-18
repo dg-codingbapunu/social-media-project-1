@@ -1,9 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Sidebar = () => {
-  const handleOnClick = (tabName) => {
-    setSelectedTab(tabName);
-  };
+const Sidebar = ({ selectedTab, setSelectedTab }) => {
   return (
     <>
       <div className="d-flex flex-column flex-shrink-0 p-3 text-bg-dark sidebar">
