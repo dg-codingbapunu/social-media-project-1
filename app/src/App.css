@@ -96,7 +96,7 @@ body {
   .post-card {
     margin: 10px; /* Adjust margins for smaller screen layout */
     max-width: 90%;
-    margin-top: 25px;
+    margin-top: 20px;
 
     /* Ensure posts fill the entire width */
   }
