@@ -19,16 +19,26 @@ const Post = ({ post }) => {
             </span>
           </h5>
           <p className="card-text">{post.body}</p>
-          {post.tags.map((tags) => (
+          {post.tags.map((tag) => (
             <span
-              key={tags}
+              key={tag}
               className="badge text-bg-primary tags"
-            >{`#${tags}`}</span>
+            >{`#${tag}`}</span>
           ))}
 
           <button type="button" className="btn btn-primary likes">
-            👍🏻
-            <span className="badge text-bg-secondary">{post.reactions}</span>
+            {typeof post.reactions === "object" && post.reactions !== null ? (
+              <>
+                <span className="badge text-bg-secondary dislikes">
+                  👍: {post.reactions.likes}
+                </span>
+                <span className="badge text-bg-secondary dislikes">
+                  👎: {post.reactions.dislikes}
+                </span>
+              </>
+            ) : (
+              <span className="badge text-bg-secondary">{post.reactions}</span>
+            )}
           </button>
         </div>
       </div>

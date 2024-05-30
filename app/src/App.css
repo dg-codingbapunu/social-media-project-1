@@ -37,6 +37,10 @@
 .loader {
   margin-top: 100px;
 }
+.dislikes {
+  margin-left: 12px;
+}
+
 /* Set the viewport for optimal scaling across devices */
 meta[name="viewport"] {
   content: width=device-width, initial-scale=1.0;
